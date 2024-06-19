@@ -1,0 +1,34 @@
+-
+  action: "add_commands"
+  commands:
+    c1:
+      params:
+        callback: "computeVorticity"
+        mpi_behavior: "all"
+-
+  action: "add_scenes"
+  scenes:
+    s1:
+      plots:
+        p1:
+          type: "pseudocolor"
+          field: "density"
+      image_name: "out_density"
+    s2:
+      plots:
+        p1:
+          type: "pseudocolor"
+          field: "vorticity"
+      image_name: "out_vorticity"
+    s3:
+      plots:
+        p1:
+          type: "pseudocolor"
+          field: "velocity_x"
+      image_name: "out_velocity_x"
+    s4:
+      plots:
+        p1:
+          type: "pseudocolor"
+          field: "velocity_y"
+      image_name: "out_velocity_y"

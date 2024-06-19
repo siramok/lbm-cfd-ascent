@@ -1,0 +1,6 @@
+.vscode
+build
+obj/main.o
+bin/lbmcfd
+.ipynb_checkpoints
+env
