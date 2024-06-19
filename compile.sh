@@ -5,11 +5,13 @@ module load cudatoolkit-standalone/12.2.2
 module load visualization/ascent
 module load cmake
 
-NODES=`wc -l < $PBS_NODEFILE`
-RANKS_PER_NODE=4
-TOTAL_RANKS=$(( $NODES * $RANKS_PER_NODE ))
+export CC=$(which cc)
+export CXX=$(which CC)
 
+# Reconfigure
+rm -rf build
+mkdir build
 cp ascent_files/* build
 cd build
-rm *.png
-mpiexec -n $TOTAL_RANKS -ppn $RANKS_PER_NODE ./lbmcfd
+cmake -DAscent_DIR=/soft/visualization/ascent/develop/2024-05-03-8baa78c/ascent-develop/ -S ..
+make

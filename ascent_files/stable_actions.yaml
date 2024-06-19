@@ -13,22 +13,22 @@
         p1:
           type: "pseudocolor"
           field: "density"
-      image_name: "out_density"
-    s2:
-      plots:
-        p1:
-          type: "pseudocolor"
-          field: "vorticity"
-      image_name: "out_vorticity"
-    s3:
-      plots:
-        p1:
-          type: "pseudocolor"
-          field: "velocity_x"
-      image_name: "out_velocity_x"
-    s4:
-      plots:
-        p1:
-          type: "pseudocolor"
-          field: "velocity_y"
-      image_name: "out_velocity_y"
+      image_prefix: "density_%04d"
+    # s2:
+    #   plots:
+    #     p1:
+    #       type: "pseudocolor"
+    #       field: "vorticity"
+    #   image_name: "vorticity"
+    # s3:
+    #   plots:
+    #     p1:
+    #       type: "pseudocolor"
+    #       field: "velocity_x"
+    #   image_name: "velocity_x"
+    # s4:
+    #   plots:
+    #     p1:
+    #       type: "pseudocolor"
+    #       field: "velocity_y"
+    #   image_name: "velocity_y"

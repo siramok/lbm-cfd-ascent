@@ -92,10 +92,10 @@ int main(int argc, char **argv)
     dim_y = 80;
 
     // Stable value
-    //time_steps = 3200;
+    time_steps = 3200;
 
     // Unstable value
-    time_steps = 320;
+    // time_steps = 320;
 
     runLbmCfdSimulation(dim_x, dim_y);
 
@@ -125,17 +125,6 @@ void runLbmCfdSimulation(uint32_t dim_x, uint32_t dim_y)
 
     // Although the pointer is a global variable, we don't initialize it until here
     lbm = new LbmD2Q9(dim_x, dim_y, rank, num_ranks);
-
-    // Output simulation initial conditions
-    if (rank == 0)
-    {
-        std::cout << "\nLBM-CFD> Simulation running" << std::endl;
-        std::cout << std::fixed << std::setprecision(6) << "LBM-CFD> speed: " << simulation_speed << ", viscosity: " << simulation_viscosity << ", reynolds: " << reynolds_number << std::endl;
-        std::cout << "Press enter to begin..." << std::endl;
-
-        // Wait for the user to hit enter before starting, lets me prepare the demo
-        std::cin.get();
-    }
 
     // Initialize simulation
     std::vector<Barrier *> barriers;
